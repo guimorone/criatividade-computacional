@@ -4,11 +4,9 @@ import { parse } from 'rss-to-json'
 
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { Container } from '@/components/Container'
-import { FormattedDate } from '@/components/FormattedDate'
 import { PlayButton } from '@/components/player/PlayButton'
 
 export default function Episode({ episode }) {
-  let date = new Date(episode.published)
 
   let audioPlayerData = useMemo(
     () => ({
@@ -38,10 +36,7 @@ export default function Episode({ episode }) {
                 <h1 className="mt-2 text-4xl font-bold text-slate-900">
                   {episode.title}
                 </h1>
-                <FormattedDate
-                  date={date}
-                  className="order-first font-mono text-sm leading-7 text-slate-500"
-                />
+                <p className="order-first font-mono text-sm leading-7 text-slate-500">{episode.published}</p>
               </div>
             </div>
             <p className="ml-24 mt-3 text-lg font-medium leading-8 text-slate-700">

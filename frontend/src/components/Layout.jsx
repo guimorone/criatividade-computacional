@@ -145,19 +145,15 @@ function AboutSection(props) {
           colors={['fill-violet-300', 'fill-pink-300']}
           className="h-2.5 w-2.5"
         />
-        <span className="ml-2.5">About</span>
+        <span className="ml-2.5">Sobre</span>
       </h2>
       <p
         className={clsx(
           'mt-2 text-base leading-7 text-slate-700',
-          !isExpanded && 'lg:line-clamp-4'
+          !isExpanded && 'lg:line-clamp-1'
         )}
       >
-        In this show, Eric and Wes dig deep to get to the facts with guests who
-        have been labeled villains by a society quick to judge, without actually
-        getting the full story. Tune in every Thursday to get to the truth with
-        another misunderstood outcast as they share the missing context in their
-        tragic tale.
+        Aqui iremos mostrar músicas de outros cantores na voz da loirinha.
       </p>
       {!isExpanded && (
         <button
@@ -223,7 +219,7 @@ export function Layout({ children }) {
                 colors={['fill-indigo-300', 'fill-blue-300']}
                 className="h-2.5 w-2.5"
               />
-              <span className="ml-2.5">Listen</span>
+              <span className="ml-2.5">Modelos</span>
             </h2>
             <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
             <ul

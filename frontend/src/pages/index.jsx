@@ -5,7 +5,6 @@ import { parse } from 'rss-to-json'
 
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { Container } from '@/components/Container'
-import { FormattedDate } from '@/components/FormattedDate'
 
 function PlayPauseIcon({ playing, ...props }) {
   return (
@@ -24,8 +23,6 @@ function PlayPauseIcon({ playing, ...props }) {
 }
 
 function EpisodeEntry({ episode }) {
-  let date = new Date(episode.published)
-
   let audioPlayerData = useMemo(
     () => ({
       title: episode.title,
@@ -52,10 +49,8 @@ function EpisodeEntry({ episode }) {
           >
             <Link href={`/${episode.id}`}>{episode.title}</Link>
           </h2>
-          <FormattedDate
-            date={date}
-            className="order-first font-mono text-sm leading-7 text-slate-500"
-          />
+          <p className="order-first font-mono text-sm leading-7 text-slate-500">{episode.published}</p>
+          
           <p className="mt-1 text-base leading-7 text-slate-700">
             {episode.description}
           </p>
