@@ -1,10 +1,10 @@
 import { useMemo } from 'react'
 import Head from 'next/head'
-import { parse } from 'rss-to-json'
 
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { Container } from '@/components/Container'
 import { PlayButton } from '@/components/player/PlayButton'
+import gallery from "../metadata/gallery.json"
 
 export default function Episode({ episode }) {
 
@@ -44,10 +44,6 @@ export default function Episode({ episode }) {
             </p>
           </header>
           <hr className="my-12 border-gray-200" />
-          <div
-            className="prose prose-slate mt-14 [&>h2:nth-of-type(3n)]:before:bg-violet-200 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-medium [&>h2]:leading-7 [&>h2]:text-slate-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5"
-            dangerouslySetInnerHTML={{ __html: episode.content }}
-          />
         </Container>
       </article>
     </>
@@ -55,18 +51,18 @@ export default function Episode({ episode }) {
 }
 
 export async function getStaticProps({ params }) {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-  let episode = feed.items
-    .map(({ id, title, description, content, enclosures, published }) => ({
+  let items = {...gallery}.data
+  let episode = items
+    .map(({ id, title, description, modified_audio_url, audio_type, published, content }) => ({
       id: id.toString(),
       title: `${id}: ${title}`,
       description,
-      content,
       published,
-      audio: enclosures.map((enclosure) => ({
-        src: enclosure.url,
-        type: enclosure.type,
-      }))[0],
+      content,
+      audio: {
+        src: modified_audio_url,
+        type: audio_type,
+      },
     }))
     .find(({ id }) => id === params.episode)
 
@@ -85,10 +81,10 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
+  let items = {...gallery}.data
 
   return {
-    paths: feed.items.map(({ id }) => ({
+    paths: items.map(({ id }) => ({
       params: {
         episode: id.toString(),
       },
