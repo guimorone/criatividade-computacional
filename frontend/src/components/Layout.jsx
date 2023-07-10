@@ -136,7 +136,6 @@ function PersonIcon(props) {
 }
 
 function AboutSection(props) {
-  let [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <section {...props}>
@@ -148,22 +147,10 @@ function AboutSection(props) {
         <span className="ml-2.5">Sobre</span>
       </h2>
       <p
-        className={clsx(
-          'mt-2 text-base leading-7 text-slate-700',
-          !isExpanded && 'lg:line-clamp-1'
-        )}
+        className={'mt-2 text-base leading-7 text-slate-700'}
       >
         Aqui iremos mostrar músicas de outros cantores na voz da loirinha.
       </p>
-      {!isExpanded && (
-        <button
-          type="button"
-          className="mt-2 hidden text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block"
-          onClick={() => setIsExpanded(true)}
-        >
-          Show more
-        </button>
-      )}
     </section>
   )
 }
@@ -213,38 +200,7 @@ export function Layout({ children }) {
             </p>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
-          <section className="mt-10 lg:mt-12">
-            <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">
-              <TinyWaveFormIcon
-                colors={['fill-indigo-300', 'fill-blue-300']}
-                className="h-2.5 w-2.5"
-              />
-              <span className="ml-2.5">Modelos</span>
-            </h2>
-            <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
-            <ul
-              role="list"
-              className="mt-4 flex justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
-            >
-              {[
-                ['Spotify', SpotifyIcon],
-                ['Apple Podcast', ApplePodcastIcon],
-                ['Overcast', OvercastIcon],
-                ['RSS Feed', RSSIcon],
-              ].map(([label, Icon]) => (
-                <li key={label} className="flex">
-                  <Link
-                    href="/"
-                    className="group flex items-center"
-                    aria-label={label}
-                  >
-                    <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
-                    <span className="hidden sm:ml-3 sm:block">{label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
+
         </div>
       </header>
       <main className="border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
