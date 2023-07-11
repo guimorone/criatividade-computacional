@@ -149,20 +149,20 @@ function AboutSection(props) {
       <p
         className={'mt-2 text-base leading-7 text-slate-700'}
       >
-        Aqui iremos mostrar músicas de outros cantores na voz da loirinha.
+        Aqui iremos mostrar músicas de outros cantores na voz da indústria da música.
       </p>
     </section>
   )
 }
 
 export function Layout({ children }) {
-  let hosts = ['Eric Gordon', 'Wes Mantooth']
+  let hosts = ['ALAS2', 'AOQB', 'ELM2', 'GMA2', 'MEAM', 'MRBG', 'WSSF']
 
   return (
     <>
       <header className="bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
-          <span className="font-mono text-slate-500">Hosted by</span>
+          <span className="font-mono text-slate-500">Created by</span>
           <span className="mt-6 flex gap-6 font-bold text-slate-900">
             {hosts.map((host, hostIndex) => (
               <Fragment key={host}>
@@ -196,7 +196,7 @@ export function Layout({ children }) {
               <Link href="/">Vocais da Loirinha</Link>
             </p>
             <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
-              Músicas famosas na voz da melhor cantora LOIRA do mundo.
+              Provando que ela é boa em QUALQUER coisa 🙏
             </p>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
@@ -212,7 +212,7 @@ export function Layout({ children }) {
           <AboutSection />
           <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
             <PersonIcon className="h-3 w-auto fill-slate-300" />
-            <span className="ml-2.5">Hosted by</span>
+            <span className="ml-2.5">Created by</span>
           </h2>
           <div className="mt-2 flex gap-6 text-sm font-bold leading-7 text-slate-900">
             {hosts.map((host, hostIndex) => (

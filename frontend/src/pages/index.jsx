@@ -4,33 +4,18 @@ import Link from 'next/link'
 
 import { useAudioPlayer } from '@/components/AudioProvider'
 import { Container } from '@/components/Container'
+import { PlayPauseIcon } from '@/components/PlayPauseIcon'
 
 import gallery from "../metadata/gallery.json"
-import { maxWidth } from 'tailwindcss/defaultTheme'
 
-function PlayPauseIcon({ playing, ...props }) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>
-      {playing ? (
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M1.496 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H2.68a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H1.496Zm5.82 0a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H8.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5H7.316Z"
-        />
-      ) : (
-        <path d="M8.25 4.567a.5.5 0 0 1 0 .866l-7.5 4.33A.5.5 0 0 1 0 9.33V.67A.5.5 0 0 1 .75.237l7.5 4.33Z" />
-      )}
-    </svg>
-  )
-}
 
 function EpisodeEntry({ episode }) {
   let audioPlayerData = useMemo(
     () => ({
       title: episode.title,
       audio: {
-        src: episode.audio.src,
-        type: episode.audio.type,
+        src: `/audio/${episode.id}/final.mp3`,
+        type: episode.audio_type,
       },
       link: `/${episode.id}`,
     }),
@@ -90,7 +75,7 @@ function EpisodeEntry({ episode }) {
             </div>
           </div>
           <div >
-              <img src={episode.image_src} style={{ "height": "136px", width:"136px"}} />
+              <img src={`/images/${episode.id}.png`} className="rounded-md shadow-sm sm:rounded-lg lg:rounded-xl" style={{ "height": "136px", width:"136px"}} />
           </div>
         </div>
       </Container>
@@ -131,16 +116,12 @@ export async function getStaticProps() {
   return {
     props: {
       episodes: items.map(
-        ({ id, title, description, modified_audio_url, audio_type, published, image_src }) => ({
+        ({ id, title, description, audio_type, published }) => ({
           id,
           title: `${id}: ${title}`,
           published,
           description,
-          image_src,
-          audio: {
-            src: modified_audio_url,
-            type: audio_type,
-          },
+          audio_type
         })
       ),
     },
