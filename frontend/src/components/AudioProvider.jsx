@@ -74,9 +74,12 @@ export function AudioProvider({ children }) {
         dispatch({ type: 'TOGGLE_MUTE' })
       },
       isPlaying(data) {
-        return data
-          ? state.playing && playerRef.current.currentSrc === data.audio.src
-          : state.playing
+        if(data && playerRef?.current?.currentSrc){
+          var currentSrcUrl = new URL(playerRef.current.currentSrc)
+
+          return state.playing && currentSrcUrl.pathname === data.audio.src
+        }
+        return state.playing
       },
     }
   }, [state.playing])
