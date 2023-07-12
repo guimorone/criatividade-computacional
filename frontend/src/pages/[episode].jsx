@@ -88,8 +88,13 @@ export default function Episode({ episode }) {
             <ListenButton episode={episode} audio_filename="instrumental"/>
             <p>Modified Vocals:</p>
             <ListenButton episode={episode} audio_filename="modified"/>
-            <h2 className="mt-2 text-3xl font-bold text-slate-900">Image info</h2>
             <br/>
+
+            <div >
+              <img src={`/images/${episode.id}.png`} className="rounded-md shadow-sm sm:rounded-lg lg:rounded-xl" style={{ "height": "200px", width:"200px"}} />
+            </div>
+
+            <h2 className="mt-2 text-3xl font-bold text-slate-900">Image info</h2>
             <p>Source: {episode.content.source}</p>
             <p>Stable Diffusion version: {episode.content.stable_diffusion_version}</p>
             <p>Prompt: {episode.content.prompt}</p>
