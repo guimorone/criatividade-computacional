@@ -169,15 +169,15 @@ export function Layout({ children }) {
             </p>
           </div>
           <div className='hidden lg:block mt-12 space-y-6'>
-            <AboutSection  />
+            <AboutSection />
             <div className='pb-2 space-y-2'>
               <div className="flex items-center gap-x-2.5">
                 <GroupIcon className='w-5 h-5 text-pink-500' />
                 <p className='font-mono text-sm font-semibold leading-7 text-slate-900'>Grupo</p>
               </div>
               <div className='space-y-1.5'>
-                {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700'>
-                  <p className='font-semibold' key={login}>{name}</p>
+                {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700' key={login}>
+                  <p className='font-semibold' >{name}</p>
                   <p>{login}</p>
                 </div>)}
               </div>
@@ -197,16 +197,16 @@ export function Layout({ children }) {
       </main>
       <footer className="border-t border-slate-200 bg-slate-50 py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
         <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
-        <div className='mt-12 space-y-6'>
-            <AboutSection  />
+          <div className='mt-12 space-y-6'>
+            <AboutSection />
             <div className='pb-2 space-y-2'>
               <div className="flex items-center gap-x-2.5">
                 <GroupIcon className='w-5 h-5 text-pink-500' />
                 <p className='font-mono text-sm font-semibold leading-7 text-slate-900'>Grupo</p>
               </div>
               <div className='space-y-1.5'>
-                {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700'>
-                  <p className='font-semibold' key={login}>{name}</p>
+                {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700' key={login}>
+                  <p className='font-semibold' >{name}</p>
                   <p>{login}</p>
                 </div>)}
               </div>
