@@ -120,7 +120,7 @@ function AboutSection(props) {
 }
 
 export function Layout({ children }) {
-  let hosts = ['ALAS3', 'AOQB', 'ELM2', 'GMA2', 'MEAM', 'MRBG', 'WSSF']
+  let hosts = ['EQUIPE 1']
 
   return (
     <>
