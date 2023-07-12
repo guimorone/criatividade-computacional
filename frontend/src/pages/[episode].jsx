@@ -7,7 +7,7 @@ import { PlayButton } from '@/components/player/PlayButton'
 import { PlayPauseIcon } from '@/components/PlayPauseIcon'
 import gallery from "../metadata/gallery.json"
 
-function ListenButton({episode, audio_filename}){
+function ListenButton({ episode, audio_filename }) {
 
   let audioPlayerData = useMemo(
     () => ({
@@ -27,9 +27,8 @@ function ListenButton({episode, audio_filename}){
       type="button"
       onClick={() => player.toggle()}
       className="flex items-center text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
-      aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${
-        episode.title
-      }`}
+      aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${episode.title
+        }`}
     >
       <PlayPauseIcon
         playing={player.playing}
@@ -83,25 +82,27 @@ export default function Episode({ episode }) {
           <div className="flex flex-col">
             <h2 className="mt-2 text-3xl font-bold text-slate-900">More Audios</h2>
             <p>Original Vocals:</p>
-            <ListenButton episode={episode} audio_filename="original"/>
+            <ListenButton episode={episode} audio_filename="original" />
             <p>Instrumental:</p>
-            <ListenButton episode={episode} audio_filename="instrumental"/>
+            <ListenButton episode={episode} audio_filename="instrumental" />
             <p>Modified Vocals:</p>
-            <ListenButton episode={episode} audio_filename="modified"/>
-            <br/>
+            <ListenButton episode={episode} audio_filename="modified" />
+            <br />
 
-            <div >
-              <img src={`/images/${episode.id}.png`} className="rounded-md shadow-sm sm:rounded-lg lg:rounded-xl" style={{ "height": "200px", width:"200px"}} />
+            <div className='flex gap-x-2.5 justify-between'>
+              <div><h2 className="mt-2 text-3xl font-bold text-slate-900">Image info</h2>
+                <p>Source: {episode.content.source}</p>
+                <p>Stable Diffusion version: {episode.content.stable_diffusion_version}</p>
+                <p>Prompt: {episode.content.prompt}</p>
+                <p>Image Strength: {episode.content.image_strength}</p>
+                <p>Seed: {episode.content.seed}</p>
+                <p>Sampler: {episode.content.sampler}</p>
+                <p>Guidance Scale: {episode.content.guidance_scale}</p></div>
+              <img src={`/images/${episode.id}.png`} className="rounded-md shadow-sm sm:rounded-lg lg:rounded-xl" style={{ "height": "200px", width: "200px" }} />
             </div>
 
-            <h2 className="mt-2 text-3xl font-bold text-slate-900">Image info</h2>
-            <p>Source: {episode.content.source}</p>
-            <p>Stable Diffusion version: {episode.content.stable_diffusion_version}</p>
-            <p>Prompt: {episode.content.prompt}</p>
-            <p>Image Strength: {episode.content.image_strength}</p>
-            <p>Seed: {episode.content.seed}</p>
-            <p>Sampler: {episode.content.sampler}</p>
-            <p>Guidance Scale: {episode.content.guidance_scale}</p>
+
+
           </div>
         </Container>
       </article>
@@ -110,7 +111,7 @@ export default function Episode({ episode }) {
 }
 
 export async function getStaticProps({ params }) {
-  let items = {...gallery}.data
+  let items = { ...gallery }.data
   let episode = items
     .map(({ id, title, description, audio_type, published, content }) => ({
       id: id.toString(),
@@ -137,7 +138,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let items = {...gallery}.data
+  let items = { ...gallery }.data
 
   return {
     paths: items.map(({ id }) => ({

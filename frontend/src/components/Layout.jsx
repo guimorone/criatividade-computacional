@@ -71,18 +71,19 @@ function Waveform(props) {
   )
 }
 
-function TinyWaveFormIcon({ colors = [], ...props }) {
+function TinyWaveFormIcon({ ...props }) {
   return (
-    <svg aria-hidden="true" viewBox="0 0 10 10" {...props}>
-      <path
-        d="M0 5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5Z"
-        className={colors[0]}
-      />
-      <path
-        d="M6 1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V1Z"
-        className={colors[1]}
-      />
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
     </svg>
+
+  )
+}
+
+function PaperIcon({ ...props }) {
+  return (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"  {...props}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+  </svg>
   )
 }
 
@@ -95,32 +96,36 @@ function PersonIcon(props) {
   )
 }
 
+function GroupIcon({ ...props }) {
+  return (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+  </svg>
+  )
+}
+
 function AboutSection(props) {
 
   return (
     <section {...props}>
       <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
         <TinyWaveFormIcon
-          colors={['fill-violet-300', 'fill-pink-300']}
-          className="h-2.5 w-2.5"
+          className="h-5 w-5 text-pink-500"
         />
-        <span className="ml-2.5">Sobre</span>
+        <span className="ml-2.5 font-semibold">Sobre</span>
       </h2>
       <p
         className={'mt-2 text-base leading-7 text-slate-700'}
       >
         Aqui iremos mostrar músicas de outros cantores na voz da indústria da música.
       </p>
-      <br/>
-      <p className="text-l font-bold text-slate-900">
-        <Link href="./pdf/report.pdf">Relatório</Link>
-      </p>
+      <br />
     </section>
   )
 }
 
 export function Layout({ children }) {
-  let hosts = ['EQUIPE 1']
+  const hosts = ['EQUIPE 1']
+  const group = [{ name: 'Alice Oliveira', login: 'aoqb' }, { name: 'Ana Letícia', login: 'alas3' }, { name: 'Guilherme Morone', login: 'gma2' }, { name: 'Williams Santiago', login: 'wssf' }, { name: 'Matheus Godinho', login: 'mrbg' }, { name: 'Enrique Laborão', login: 'elm2' }, { name: 'Marcello Menezes', login: 'meam' }]
 
   return (
     <>
@@ -163,7 +168,26 @@ export function Layout({ children }) {
               Provando que ela é boa em QUALQUER coisa 🙏
             </p>
           </div>
-          <AboutSection className="mt-12 hidden lg:block" />
+          <div className='hidden lg:block mt-12 space-y-6'>
+            <AboutSection  />
+            <div className='pb-2 space-y-2'>
+              <div className="flex items-center gap-x-2.5">
+                <GroupIcon className='w-5 h-5 text-pink-500' />
+                <p className='font-mono text-sm font-semibold leading-7 text-slate-900'>Grupo</p>
+              </div>
+              <div className='space-y-1.5'>
+                {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700'>
+                  <p className='font-semibold'>{name}</p>
+                  <p>{login}</p>
+                </div>)}
+              </div>
+            </div>
+            <Link href="./pdf/report.pdf" target='_blank' className="flex items-center gap-x-2.5 text-l hover:opacity-70 opacity-100">
+              <PaperIcon className="w-5 h-5 text-pink-500" />
+              <p className='text-sm font-semibold leading-7 font-mono text-slate-900'>Relatório <i>Post Mortem</i></p>
+            </Link>
+          </div>
+
 
         </div>
       </header>
@@ -173,7 +197,25 @@ export function Layout({ children }) {
       </main>
       <footer className="border-t border-slate-200 bg-slate-50 py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
         <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
-          <AboutSection />
+        <div className='mt-12 space-y-6'>
+            <AboutSection  />
+            <div className='pb-2 space-y-2'>
+              <div className="flex items-center gap-x-2.5">
+                <GroupIcon className='w-5 h-5 text-pink-500' />
+                <p className='font-mono text-sm font-semibold leading-7 text-slate-900'>Grupo</p>
+              </div>
+              <div className='space-y-1.5'>
+                {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700'>
+                  <p className='font-semibold'>{name}</p>
+                  <p>{login}</p>
+                </div>)}
+              </div>
+            </div>
+            <Link href="./pdf/report.pdf" target='_blank' className="flex items-center gap-x-2.5 text-l hover:opacity-70 opacity-100">
+              <PaperIcon className="w-5 h-5 text-pink-500" />
+              <p className='text-sm font-semibold leading-7 font-mono text-slate-900'>Relatório <i>Post Mortem</i></p>
+            </Link>
+          </div>
           <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
             <PersonIcon className="h-3 w-auto fill-slate-300" />
             <span className="ml-2.5">Created by</span>

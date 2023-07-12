@@ -8,7 +8,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
+                "prompt": "Taylor Swift + imagem de Bruno Mars",
                 "image_strength":44,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
@@ -23,8 +23,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Miley Cyrus",
+                "image_strength":83,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -38,8 +38,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Marília Mendonça",
+                "image_strength":85,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -53,8 +53,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Manu Gavassi",
+                "image_strength":71,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -68,8 +68,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Adele",
+                "image_strength":47,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -83,8 +83,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Gotye",
+                "image_strength":74,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -98,8 +98,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Amy Lee",
+                "image_strength":70,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -113,8 +113,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Demi Lovato",
+                "image_strength":84,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -128,7 +128,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de Elis Regina",
+                "prompt": "Taylor Swift + imagem de Elis Regina",
                 "image_strength":81,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
@@ -143,7 +143,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de Harry Styles",
+                "prompt": "Taylor Swift + imagem de Harry Styles",
                 "image_strength":62,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
@@ -158,7 +158,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de Cosplay de Naruto",
+                "prompt": "Taylor Swift + imagem de Cosplay de Naruto",
                 "image_strength":86,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
@@ -173,7 +173,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de Michael Jackson",
+                "prompt": "Taylor Swift + imagem de Michael Jackson",
                 "image_strength":65,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
@@ -188,7 +188,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de Beyonce",
+                "prompt": "Taylor Swift + imagem de Beyonce",
                 "image_strength":89,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
@@ -203,8 +203,8 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem de bruno mars",
-                "image_strength":44,
+                "prompt": "Taylor Swift + imagem de Pablo",
+                "image_strength":90,
                 "seed":154260213,
                 "sampler":"k_euler_ancestral",
                 "guidance_scale":7
@@ -218,7 +218,7 @@
             "content":{
                 "source" :"Playground AI",
                 "stable_diffusion_version": 1.5,
-                "prompt": "taylor swift + imagem da personagem Gabriella Montez",
+                "prompt": "Taylor Swift + imagem da personagem Gabriella Montez",
                 "image_strength":64,
                 "seed":998505856,
                 "sampler":"k_euler_ancestral",
