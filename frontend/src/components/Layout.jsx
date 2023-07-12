@@ -177,7 +177,7 @@ export function Layout({ children }) {
               </div>
               <div className='space-y-1.5'>
                 {group.map(({ name, login }) => <div className='flex gap-x-2.5 text-base leading-7 text-slate-700'>
-                  <p className='font-semibold'>{name}</p>
+                  <p className='font-semibold' key={login}>{name}</p>
                   <p>{login}</p>
                 </div>)}
               </div>
